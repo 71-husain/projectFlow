@@ -38,6 +38,24 @@ This flow is enforced at **API, middleware, and UI level**.
  ├── dashboard.png        # Project overview after login
  ├── project-view.png     # Inside a selected project
  └── tasks-view.png       # Tasks within a project
+
+<img width="1193" height="563" alt="image" src="https://github.com/user-attachments/assets/d78f71b9-a5d8-451a-8ac4-1db117a2e95c" />
+
+<img width="1185" height="505" alt="image" src="https://github.com/user-attachments/assets/409f207f-6da4-4cc5-9e9c-b170906ccf9e" />
+
+<img width="1296" height="623" alt="image" src="https://github.com/user-attachments/assets/9993a169-f2fd-43f7-ac79-e16b9b10b97b" />
+
+<img width="1256" height="592" alt="image" src="https://github.com/user-attachments/assets/8c59c05f-fec9-4db0-b206-2e34a98d3439" />
+
+<img width="1119" height="631" alt="image" src="https://github.com/user-attachments/assets/ce86efec-db15-43e1-af5c-dc95dec13173" />
+
+<img width="1051" height="382" alt="image" src="https://github.com/user-attachments/assets/4cd9fca3-53fe-4733-9516-6370466af47d" />
+
+<img width="1090" height="448" alt="image" src="https://github.com/user-attachments/assets/6031c9d4-2fdc-4629-9a1d-23c129cc2447" />
+
+
+
+
 ```
 
 ---
