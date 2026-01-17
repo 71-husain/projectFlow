@@ -164,21 +164,6 @@ npm install
 npm run dev
 ```
 
----
-
-## ☁️ AWS Deployment (Planned)
-
-This project is designed to deploy cleanly on AWS:
-
-- **Backend** → EC2 (Node + PM2 + Nginx)
-- **Frontend** → S3 + CloudFront
-- **Secrets** → Environment variables
-
-Deployment steps will live in a dedicated document:
-
-```
-AWS_DEPLOYMENT.md
-```
 
 ---
 
