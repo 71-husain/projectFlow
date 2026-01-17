@@ -1,0 +1,204 @@
+# TASKFLOW
+
+A **project-first task management system** built to reflect how real teams work — projects → members → tasks — with a clean dashboard-driven workflow and AWS-ready backend architecture.
+
+This repository is intentionally structured to mirror **production-grade full‑stack applications**, not demo apps.
+
+---
+
+## 🧭 Product Flow (How the App Works)
+
+1. **Dashboard**
+   - Entry point after login
+   - Shows all projects the user is part of
+   - High-level visibility before drilling down
+
+2. **Project**
+   - Every task belongs to a project
+   - Projects manage members and access
+
+3. **Members**
+   - Only project members can view or work on tasks
+   - Owners manage project membership
+
+4. **Tasks**
+   - Created inside projects
+   - Assigned, updated, and tracked by status
+
+This flow is enforced at **API, middleware, and UI level**.
+
+---
+
+## 📸 Screenshots
+
+> Screenshots are organized to reflect the actual user journey.
+
+```
+/screenshots
+ ├── dashboard.png        # Project overview after login
+ ├── project-view.png     # Inside a selected project
+ └── tasks-view.png       # Tasks within a project
+```
+
+---
+
+## 🏗️ Folder Structure
+
+### Root
+```
+TASKFLOW
+ ├── BackEnd
+ └── FrontEnd
+```
+
+---
+
+### 🔙 Backend Structure
+
+```
+BackEnd/
+ ├── src/
+ │   ├── config/          # DB & environment config
+ │   ├── controllers/    # Business logic
+ │   ├── middleware/     # Auth & access control
+ │   ├── models/         # Mongoose schemas
+ │   ├── routes/         # API routes
+ │   └── server.js       # App entry point
+ │
+ ├── .env
+ ├── package.json
+ └── package-lock.json
+```
+
+**Why this structure**
+- Clear separation of concerns
+- Scales cleanly as features grow
+- Matches real production Node.js services
+
+---
+
+### 🎨 Frontend Structure
+
+```
+FrontEnd/
+ ├── public/
+ ├── src/
+ │   ├── assets/          # Images & static assets
+ │   ├── components/     # Reusable UI components
+ │   ├── pages/          # Page-level views
+ │   ├── routes/         # Route definitions
+ │   ├── services/       # API & HTTP layer
+ │   ├── store/          # Global state management
+ │   ├── utils/          # Helpers & constants
+ │   │
+ │   ├── App.jsx
+ │   ├── main.jsx
+ │   ├── App.css
+ │   └── index.css
+ │
+ ├── index.html
+ ├── eslint.config.js
+ ├── package.json
+ └── package-lock.json
+```
+
+This structure keeps **UI, routing, state, and API logic decoupled**.
+
+---
+
+## 🔐 Backend Access Control Model
+
+TaskFlow enforces access using **layered middleware**, not frontend trust.
+
+- Authentication → `auth.middleware`
+- Project access → `canAccessProject`
+- Ownership rules → `owner.middleware`
+- Task permissions → `task.middleware`
+
+Every protected action passes through these checks.
+
+---
+
+## 🌐 API Design (High-Level)
+
+### Authentication
+- Register user
+- Login user
+
+### Projects
+- Create project
+- Fetch user projects
+- Fetch single project
+- Delete project
+
+### Project Members
+- View members
+- Add member (owner only)
+- Remove member (owner only)
+
+### Tasks
+- Create task inside project
+- Fetch tasks by project
+- Update task
+- Update task status
+- Assign task
+- Delete task
+
+All routes are **project-scoped** and permission-checked.
+
+---
+
+## ⚙️ Local Setup
+
+### Backend
+```
+cd BackEnd
+npm install
+npm run dev
+```
+
+### Frontend
+```
+cd FrontEnd
+npm install
+npm run dev
+```
+
+---
+
+## ☁️ AWS Deployment (Planned)
+
+This project is designed to deploy cleanly on AWS:
+
+- **Backend** → EC2 (Node + PM2 + Nginx)
+- **Frontend** → S3 + CloudFront
+- **Secrets** → Environment variables
+
+Deployment steps will live in a dedicated document:
+
+```
+AWS_DEPLOYMENT.md
+```
+
+---
+
+## 🧠 Design Philosophy
+
+- Project-first, not task-first
+- Backend enforces rules, frontend reflects them
+- Structure over shortcuts
+- Deployment-readiness from day one
+
+---
+
+## 👤 Author
+
+**Husain Ansari**  
+Full‑Stack Developer
+
+---
+
+## 📄 License
+
+Built for learning, architecture practice, and real‑world deployment demos.
+
