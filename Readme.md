@@ -31,6 +31,15 @@ This flow is enforced at **API, middleware, and UI level**.
 Frontend: https://project-flow-lake.vercel.app  
 Backend: https://projectflow-backend-4ai7.onrender.com
 
+## Test Login Credentials
+ as project Owner -
+  email - ansari900@gmail.com
+  password - ansari900
+
+ as project member - 
+  email - ansari90@gmail.com
+  password - ansari90
+
 ## 🛠️ Tech Stack
 Frontend: React, Vite, Axios, React Router  
 Backend: Node.js, Express, MongoDB, JWT  
