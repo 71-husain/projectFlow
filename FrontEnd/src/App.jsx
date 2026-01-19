@@ -5,7 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import ProjectDetails from "./pages/ProjectDetails";
 import Register from "./pages/Register";
-import TaskDetails from "./pages/taskDetails";
+import TaskDetails from "./pages/TaskDetails";
 
 function App() {
   return (
