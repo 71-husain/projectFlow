@@ -27,6 +27,17 @@ This repository is intentionally structured to mirror **production-grade full‑
 
 This flow is enforced at **API, middleware, and UI level**.
 
+## 🌍 Live Demo
+Frontend: https://project-flow-lake.vercel.app  
+Backend: https://your-render-url.onrender.com  
+
+## 🛠️ Tech Stack
+Frontend: React, Vite, Axios, React Router  
+Backend: Node.js, Express, MongoDB, JWT  
+Security: Helmet, CORS, Rate Limiting  
+Deployment: Vercel (Frontend), Render (Backend)
+
+
 ---
 
 ## 📸 Screenshots
