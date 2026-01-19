@@ -6,11 +6,19 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import ProjectDetails from "./pages/ProjectDetails";
 import Register from "./pages/Register";
 import TaskDetails from "./pages/TaskDetails"
+import { Navigate } from "react-router-dom";
+
+const RootRedirect = () => {
+  const token = localStorage.getItem("token");
+  return token ? <Navigate to="/dashboard" /> : <Navigate to="/login" />;
+};
+
 
 function App() {
   return (
     <>
         <Routes>
+          <Route path="/" element={<RootRedirect />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route
