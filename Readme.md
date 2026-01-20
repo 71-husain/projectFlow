@@ -1,4 +1,4 @@
-# TASKFLOW
+# ProjectFLOW
 
 A **project-first task management system** built to reflect how real teams work — projects → members → tasks — with a clean dashboard-driven workflow and AWS-ready backend architecture.
 
