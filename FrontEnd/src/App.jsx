@@ -7,19 +7,20 @@ import ProjectDetails from "./pages/ProjectDetails";
 import Register from "./pages/Register";
 import TaskDetails from "./pages/TaskDetails"
 import { Navigate } from "react-router-dom";
+import Landing from "./pages/Landing";
+import VerifyOtpPage from "./pages/VerifyOtpPage";
+import CompleteRegistration from "./pages/CompleteRegistration";
 
-const RootRedirect = () => {
-  const token = localStorage.getItem("token");
-  return token ? <Navigate to="/dashboard" /> : <Navigate to="/login" />;
-};
 
 
 function App() {
   return (
     <>
         <Routes>
-          <Route path="/" element={<RootRedirect />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Landing/>}/>
+          <Route path="/register" element={<Register />} />    
+          <Route path="/verify-otp" element={<VerifyOtpPage />} />
+          <Route path="/complete-registration" element={<CompleteRegistration />} />
           <Route path="/login" element={<Login />} />
           <Route
             path="/dashboard"

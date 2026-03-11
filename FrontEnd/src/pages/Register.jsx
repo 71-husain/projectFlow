@@ -1,14 +1,11 @@
 import { useState } from "react";
-import { userRegister } from "../services/auth.api";
+import { initRegister } from "../services/auth.api";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { Eye, EyeOff } from "lucide-react";
 
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -20,12 +17,16 @@ function Register() {
     setLoading(true);
 
     try {
-      await userRegister({ name, email, password});
-      navigate("/login");
-      toast.success("Registered Successfully!");
+      await initRegister({ name, email });
+
+      toast.success("OTP sent to your email");
+
+      navigate("/verify-otp", {
+        state: { email },
+      });
     } catch (error) {
       setError(error.response?.data?.message || "Registration failed");
-      toast.error(error.response?.data.message);
+      toast.error(error.response?.data.message || "Something Went Wrong!");
     } finally {
       setLoading(false);
     }
@@ -76,39 +77,6 @@ function Register() {
                          focus:border-indigo-500 transition"
               required
             />
-          </div>
-
-          {/* Password */}
-          <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
-              Password
-            </label>
-
-            <div className="relative">
-              <input
-                type={showPassword ? "text" : "password"}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
-                disabled={loading}
-                className="w-full rounded-xl border border-slate-300
-                 px-4 py-3 pr-12
-                 text-slate-800 placeholder-slate-400
-                 focus:outline-none focus:ring-2 focus:ring-indigo-500
-                 focus:border-indigo-500 transition
-                 disabled:bg-slate-100 disabled:cursor-not-allowed"
-                required
-              />
-
-              <button
-                type="button"
-                onClick={() => setShowPassword((prev) => !prev)}
-                className="absolute inset-y-0 right-3 flex items-center
-                 text-slate-400 hover:text-slate-600"
-              >
-                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-              </button>
-            </div>
           </div>
 
           {/* Error */}
